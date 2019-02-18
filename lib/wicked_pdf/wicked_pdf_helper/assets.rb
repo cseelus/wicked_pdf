@@ -32,7 +32,7 @@ class WickedPdf
       def wicked_pdf_stylesheet_pack_tag(*sources)
         return unless defined?(Webpacker)
         if running_in_development?
-          stylesheet_pack_tag(*sources)
+          stylesheet_pack_tag(*sources, media: 'all')
         else
           css_text = sources.collect do |source|
             source = WickedPdfHelper.add_extension(source, 'css')
